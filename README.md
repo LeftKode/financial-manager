@@ -7,8 +7,7 @@ Transactions are created by sending a POST request to the `/transactions` endpoi
 - `targetAccountId`: The ID of the target account.
 - `amount`: The amount to be transferred.
 
-If the data are valid, a new transaction will be persisted and the balances of the accounts will be updated.
-In the request body, it will be a field called `transactionId` that shows the unique identifier of the created transaction.
+If the data are valid, a new transaction will be persisted and the balances of the accounts will be updated. Also, in the request body, there will be a field called `transactionId` with the unique identifier of the created transaction.
 
 ## Prerequisites
 
@@ -36,12 +35,14 @@ cd [...]/financial-manager
 ```shell
 docker run -d --name mysql8 -p <<YOUR_PORT>>:3306 -e MYSQL_ROOT_PASSWORD=<<YOUR_ROOT_PASSWORD>> -e MYSQL_DATABASE=<<YOUR_DATABASE>> -e MYSQL_USER=<<YOUR_USER>> -e MYSQL_PASSWORD=<<YOUR_PASSWORD>> mysql/mysql-server:8.0.27
 ```
+Note: Replace <<`ALL_THE_PLACEHOLDERS`>> with your desired values.
+
 If you want to run it with the default values, you can use this command:
 ```shell
 docker run -d --name mysql8 -p 3308:3306 -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_DATABASE=financial_manager -e MYSQL_USER=testuser -e MYSQL_PASSWORD=DX1I48lVi mysql/mysql-server:8.0.27
 ```
 
-Replace <<`ALL_THE_PLACEHOLDERS`>> with your desired values.
+
 
 4. Build and run the Spring Boot application using the Gradle wrapper:
 
