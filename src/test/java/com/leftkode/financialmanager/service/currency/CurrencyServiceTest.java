@@ -110,6 +110,7 @@ class CurrencyServiceTest {
 
         // ===== THEN =====
         verify(currencyRepository).findById("EUR");
+        verify(currencyRepository).findById("USD");
     }
 
     @Test
