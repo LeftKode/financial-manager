@@ -1,0 +1,21 @@
+logging:
+  level:
+    root: warn
+    com:
+      leftkode: trace
+
+spring:
+  application:
+    name: financial-manager
+
+  flyway:
+    url: jdbc:mysql://localhost:3308/financial_manager
+    username: testuser
+    password: DX1I48lVi
+
+  r2dbc:
+    username: testuser
+    password: DX1I48lVi
+    url: r2dbc:mysql://localhost:3308/financial_manager
+    pool:
+      enabled: false
